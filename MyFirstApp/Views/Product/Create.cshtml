@@ -1,0 +1,21 @@
+﻿
+@using MyFirstApp.Models
+@model Product
+
+<h1>Create New Product</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label for="Name">Product Name</label>
+        <input type="text" id="Name" name="Name" value="@Model?.Name" />
+    </div>
+    <div>
+        <label for="Price">Price</label>
+        <input asp-for="Price" type="number" id="Price" name="Price" step="0.01" value="@Model?.Price" />
+    </div>
+    <div>
+        <label for="Description">Description</label>
+        <input type="text" id="Description" name="Description" value="@Model?.Description" />
+    </div>
+    <button type="submit">Create</button>
+</form>
