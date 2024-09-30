@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MyFirstApp.Data;
 using MyFirstApp.Models;
@@ -6,6 +7,7 @@ using System.IO.Pipes;
 
 namespace MyFirstApp.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         IProductRepository repo;

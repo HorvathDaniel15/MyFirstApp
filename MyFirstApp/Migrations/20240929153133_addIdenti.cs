@@ -4,7 +4,7 @@
 
 namespace MyFirstApp.Migrations
 {
-    public partial class Repair20 : Migration
+    public partial class addIdenti : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
