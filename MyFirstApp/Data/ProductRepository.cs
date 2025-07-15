@@ -30,17 +30,23 @@ namespace MyFirstApp.Data
         public void Delete(int id)
         {
             var product = Read(id);
-            _context.Products.Remove(product);
-            _context.SaveChanges();
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                _context.SaveChanges();
+            }
         }
 
         public void Update(Product item)
         {
             var old = Read(item.Id);
-            old.Name = item.Name;
-            old.Description = item.Description;
-            old.Price = item.Price;
-            _context.SaveChanges();
+            if (old != null)
+            {
+                old.Name = item.Name;
+                old.Description = item.Description;
+                old.Price = item.Price;
+                _context.SaveChanges();
+            }
         }
     }
 }
